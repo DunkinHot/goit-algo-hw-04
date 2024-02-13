@@ -13,7 +13,7 @@ def change_contact(args, contacts):
     if args[0] in contacts.keys():
         add_contacts(args, contacts)
     else:
-        print("No such name in the base")
+        return "No such name in the base"
 
 def show_phone(args,contacts):
     return contacts[args[0]]
@@ -29,7 +29,6 @@ def main():
     contacts = {}
     print("Welcome to the assistant bot!")
     while True:
-        print(contacts)
         user_input = input("Enter a command: ")
         command, *args = parse_input(user_input)
         if command in ["close", "exit"]:
